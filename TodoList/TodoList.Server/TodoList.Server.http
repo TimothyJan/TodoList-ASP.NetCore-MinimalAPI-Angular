@@ -1,0 +1,34 @@
+@TodoList.Server_HostAddress = https://localhost:7160
+
+###
+
+POST {{TodoList.Server_HostAddress}}/todoitems/
+Content-Type: application/json
+
+{
+  "name":"walk dog",
+  "isComplete":true
+}
+###
+
+GET {{TodoList.Server_HostAddress}}/todoitems
+
+###
+
+GET {{TodoList.Server_HostAddress}}/todoitems/1
+
+###
+
+PUT {{TodoList.Server_HostAddress}}/todoitems/1
+Content-Type: application/json
+
+{
+  "name": "feed fish",
+  "isComplete": false
+}
+
+###
+
+DELETE {{TodoList.Server_HostAddress}}/todoitems/1
+
+###

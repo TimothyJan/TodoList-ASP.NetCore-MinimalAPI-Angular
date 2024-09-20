@@ -1,0 +1,1 @@
+C:\Users\janti\OneDrive\Documents\GitHub\TodoList-ASP.NetCore-MinimalAPI-Angular\TodoList\todolist.client\obj\Debug\todolist.client.esproj.CoreCompileInputs.cache
