@@ -1,0 +1,30 @@
+.todo-item-form {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  text-align: center;
+}
+
+mat-form-field {
+  margin: auto;
+  width: 100%;
+}
+
+.task-input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.task-input {
+  flex: 1; /* Takes up most of the left side */
+  margin-right: 10px; /* Adds space between input and button */
+  margin-bottom: -1.25em
+}
+
+.submit-button {
+  white-space: nowrap;
+  flex-shrink: 0; /* Prevents the button from shrinking */
+}
+

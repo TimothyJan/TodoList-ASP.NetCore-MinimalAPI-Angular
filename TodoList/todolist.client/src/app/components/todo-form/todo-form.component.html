@@ -1,0 +1,27 @@
+<mat-card>
+
+  <mat-card-header>
+    <mat-card-title>Todo Form</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form class="todo-item-form" [formGroup]="todoItemForm">
+      <div class="task-input-container">
+
+        <mat-form-field class="task-input">
+          <input matInput formControlName="name" placeholder="Enter Task">
+        </mat-form-field>
+
+        <button
+          mat-raised-button
+          class="submit-button"
+          color="primary"
+          (click)="onSubmit()">
+          +ADD
+        </button>
+
+      </div>
+    </form>
+  </mat-card-content>
+
+</mat-card>

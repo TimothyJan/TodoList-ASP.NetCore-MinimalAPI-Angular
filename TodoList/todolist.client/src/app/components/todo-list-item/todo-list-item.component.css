@@ -1,0 +1,38 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.todo-name {
+  flex: 1; /* Takes up most of the left side */
+  padding-right: 10px; /* Space between name and buttons */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ensures long text doesn't overflow */
+}
+
+.full-width {
+  width: 100%; /* Ensures the mat-form-field takes up full space */
+}
+
+.todo-buttons {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  margin-left: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}

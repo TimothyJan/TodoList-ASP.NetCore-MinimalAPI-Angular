@@ -1,0 +1,29 @@
+<mat-card>
+
+  <mat-card-header>
+    <mat-card-title *ngIf="!completedList">Todo List</mat-card-title>
+    <mat-card-title *ngIf="completedList">Completed</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div *ngIf="todoList?.length; else noToDoListBlock">
+      <ul class="todo-list" *ngFor="let todo of todoList">
+        <li *ngIf="this.todo.isCompleted == completedList">
+
+          <app-todo-list-item [id]="todo.id"></app-todo-list-item>
+
+        </li>
+      </ul>
+    </div>
+  </mat-card-content>
+
+</mat-card>
+
+<ng-template #noToDoListBlock>
+  <div *ngIf="!completedList">
+    Your Todo List is Empty!
+  </div>
+  <div *ngIf="completedList">
+    No Completed Todos!
+  </div>
+</ng-template>

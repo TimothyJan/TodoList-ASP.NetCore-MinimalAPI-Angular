@@ -1,0 +1,14 @@
+.footer {
+  display: block;
+  text-align: center;
+}
+
+p {
+  font-size: small;
+  color: white;
+}
+
+p a {
+  font-size: small;
+  color: white;
+}

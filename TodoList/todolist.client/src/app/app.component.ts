@@ -1,37 +1,29 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { afterNextRender, Component, HostListener, inject, Injector, OnInit } from '@angular/core';
 
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
-}
+const largeScreenSize = 720;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
-  public forecasts: WeatherForecast[] = [];
+export class AppComponent implements OnInit{
+  title = 'TodoList';
+  injector = inject(Injector);
+  isLargeScreen: boolean = true;
 
-  constructor(private http: HttpClient) {}
+  ngOnInit(): void {
+  afterNextRender(() => this.checkScreenSize(), {injector: this.injector});
+}
 
-  ngOnInit() {
-    this.getForecasts();
+  @HostListener('window:resize', ['$event'])
+  onResize(event:any): void{
+    this.checkScreenSize();
   }
 
-  getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
-      (result) => {
-        this.forecasts = result;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+  /** Changes css based on screen size */
+  checkScreenSize(): void {
+    this.isLargeScreen = window.innerWidth > largeScreenSize; // Adjust breakpoint as needed
   }
-
-  title = 'todolist.client';
 }
