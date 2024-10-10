@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { TodoItem } from '../models/todoItem';
+import { HttpClient } from '@angular/common/http';
+import { Observable, tap } from 'rxjs';
+
+const APIAddress = "https://localhost:7160"
 
 @Injectable({
   providedIn: 'root'
@@ -8,64 +12,32 @@ export class TodoListService {
 
   todoList: TodoItem[] = [];
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  /** Gets todoList */
-  getTodoList(): TodoItem[] {
-    return this.todoList;
+  /** Gets all Todo items */
+  getTodoList(): Observable<TodoItem[]> {
+    return this.http.get<TodoItem[]>(`${APIAddress}/todoitems`);
   }
 
-  /** Get todoItem based off id */
-  getTodoItem(id:number) {
-    for(let i=0; i<this.todoList.length; i++) {
-      if(this.todoList[i].id == id) {
-        return this.todoList[i];
-      }
-    }
-    return null;
+  /** Get Todo item by id */
+  getTodoItem(id: number): Observable<TodoItem> {
+    return this.http.get<TodoItem>(`${APIAddress}/todoitems/${id}`);
   }
 
-  /** Create TodoItem */
-  createTodoItem(data:any): void {
-    // Generate id based on date.now()
-    let todoItemId = Date.now();
-    let todoItem = new TodoItem(todoItemId, data.isCompleted, data.name);
-    this.todoList.push(todoItem);
+  /** Create a new Todo item */
+  createTodoItem(newTodoItem: Partial<TodoItem>): Observable<TodoItem> {
+    return this.http.post<TodoItem>(APIAddress + `/todoitems`, newTodoItem);
   }
 
-  /** Complete TodoItem */
-  completeTodoItem(id: number): void {
-    for (let i=0; i<this.todoList.length; i++) {
-      if(this.todoList[i].id == id) {
-        this.todoList[i].isCompleted = true;
-      }
-    }
+  /** Update a Todo item's completion status */
+  updateTodoItem(id: number, updatedTodo: Partial<TodoItem>): Observable<void> {
+    return this.http.put<void>(`${APIAddress}/todoitems/${id}`, updatedTodo);
   }
 
-  /** Uncomplete TodoItem */
-  unCompleteTodoItem(id: number): void {
-    for (let i=0; i<this.todoList.length; i++) {
-      if(this.todoList[i].id == id) {
-        this.todoList[i].isCompleted = false;
-      }
-    }
-  }
-
-  /** Update Todoitem */
-  editTodoItem(id:number, editingTodo: TodoItem): void {
-    for(let i=0; i<this.todoList.length; i++) {
-      if(this.todoList[i].id == id) {
-        this.todoList[i] = editingTodo;
-      }
-    }
-  }
-
-  /** Delete Review */
-  deleteTodoItem(id:number): void {
-    for (let i=0; i<this.todoList.length; i++) {
-      if(this.todoList[i].id == id) {
-        this.todoList.splice(i, 1);
-      }
-    }
+  /** Delete a Todo item */
+  deleteTodoItem(id: number): Observable<void> {
+    return this.http.delete<void>(`${APIAddress}/todoitems/${id}`);
   }
 }

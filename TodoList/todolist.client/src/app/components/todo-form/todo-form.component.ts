@@ -9,27 +9,44 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrl: './todo-form.component.css'
 })
 export class TodoFormComponent implements OnInit {
-  initialTodoItem: TodoItem | undefined;
+  initialTodoItem: Partial<TodoItem> = {
+    name: '',
+    isComplete: false
+  };
 
   todoItemForm: FormGroup = new FormGroup({
     // dateAndTime: new FormControl("", Validators.required),
-    isCompleted: new FormControl(false, Validators.required),
+    // isCompleted: new FormControl(false, Validators.required),
     name: new FormControl("", Validators.required),
   })
 
   constructor(
-    private _todoListService: TodoListService
+    private _todoListService: TodoListService,
   ) {}
 
   ngOnInit(): void {
-    this.initialTodoItem = this.todoItemForm.value;
+    this.todoItemForm.reset(this.initialTodoItem);
   }
 
   /** Submit form and add todoItem to todoList */
   onSubmit(): void {
     if (this.todoItemForm.valid) {
-      this._todoListService.createTodoItem(this.todoItemForm.value);
+      const newTodoItem: Partial<TodoItem> = {
+        name: this.todoItemForm.value.name,
+        // isComplete: this.todoItemForm.value.isComplete,
+        // dateAndTime: new Date().toISOString()
+      };
+
+      this._todoListService.createTodoItem(newTodoItem).subscribe({
+        next: (createdTodo) => {
+          console.log('Todo created:', createdTodo);
+        },
+        error: (error) => {
+          console.error('Error creating todo:', error);
+        }
+      });
     }
+
     this.todoItemForm.reset(this.initialTodoItem);
   }
 }

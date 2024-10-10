@@ -9,44 +9,96 @@ import { TodoListService } from '../../services/todo-list.service';
 })
 export class TodoListItemComponent implements OnInit{
 
-  @Input() id: number | undefined = 0;
+  @Input() id: number = 0;
 
   editMode: boolean = false;
   todo: TodoItem | null = null;
-  editingTodo: TodoItem | null = null;
+  editingTodo: Partial<TodoItem> | null = null;
 
   constructor(
     private _todoListService: TodoListService
   ) {}
 
   ngOnInit(): void {
-    this.loadTodoItem(this.id!);
+    this.loadTodoItem(this.id);
   }
 
   /** Load TodoItem */
   loadTodoItem(id:number) {
-    this.todo = this._todoListService.getTodoItem(this.id!);
+    this._todoListService.getTodoItem(id).subscribe({
+      next: (response) => {
+        console.log('Fetched Todo:', response);
+        this.todo = response;
+      },
+      error: (error) => {
+        console.error('Error fetching Todo:', error);
+      }
+    });
   }
 
   /** Complete todoItem */
   onComplete(id: number) {
-    this._todoListService.completeTodoItem(id);
+    this._todoListService.updateTodoItem(id, { isComplete: true }).subscribe({
+      next: () => {
+        if (this.todo) {
+          this.todo.isComplete = true;
+        }
+      },
+      error: (error) => {
+        console.error('Error completing Todo:', error);
+      }
+    });
   }
 
   /** Complete todoItem */
   onUncomplete(id: number) {
-    this._todoListService.unCompleteTodoItem(id);
+    this._todoListService.updateTodoItem(id, { isComplete: false }).subscribe({
+      next: () => {
+        if (this.todo) {
+          this.todo.isComplete = false;
+        }
+      },
+      error: (error) => {
+        console.error('Error uncompleting Todo:', error);
+      }
+    });
   }
 
   /** Edit todoItem */
   onEdit(id: number) {
     this.editMode = !this.editMode;
-    this.editingTodo = this._todoListService.getTodoItem(id);
+    if (this.editMode && this.todo) {
+      this.editingTodo = { ...this.todo };
+    }
+  }
+
+  /** Submit Edit */
+  onSubmitEdit(): void {
+    if (this.editingTodo && this.todo) {
+      this._todoListService.updateTodoItem(this.todo.id, this.editingTodo).subscribe({
+        next: (updatedTodo) => {
+          if (this.todo) {
+            this.todo.name = this.editingTodo?.name ?? "";
+          }
+          this.editMode = false;
+        },
+        error: (error) => {
+          console.error('Error updating Todo:', error);
+        }
+      });
+    }
   }
 
   /** Delete todoItem */
   onDelete(id: number) {
-    this._todoListService.deleteTodoItem(id);
+    this._todoListService.deleteTodoItem(id).subscribe({
+      next: () => {
+        console.log("Deleted: " + id);
+      },
+      error: (error) => {
+        console.error('Error deleting Todo:', error);
+      }
+    });
   }
 }
 

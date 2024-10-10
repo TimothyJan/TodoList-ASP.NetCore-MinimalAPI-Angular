@@ -1,4 +1,4 @@
-<div *ngIf="this.todo" class="todo-item">
+<div *ngIf="todo" class="todo-item">
 
   <div class="todo-name">
     <div *ngIf="!editMode">{{this.todo.name}}</div>
@@ -10,16 +10,16 @@
   </div>
 
   <div class="todo-buttons">
-    <button *ngIf="this.todo.isCompleted==true" (click)="onUncomplete(this.todo.id!)">
+    <button *ngIf="this.todo.isComplete==true" (click)="onUncomplete(this.todo.id!)">
       <img class="button-icon" src="icons/check.png">
     </button>
-    <button *ngIf="this.todo.isCompleted==false" (click)="onComplete(this.todo.id!)">
+    <button *ngIf="this.todo.isComplete==false" (click)="onComplete(this.todo.id!)">
       <img class="button-icon" src="icons/uncheck.png">
     </button>
     <button *ngIf="!editMode" (click)="onEdit(this.todo.id!)">
       <img class="button-icon" src="icons/edit.png">
     </button>
-    <button *ngIf="editMode" (click)="onEdit(this.todo.id!)">
+    <button *ngIf="editMode" (click)="onSubmitEdit()">
       <img class="button-icon" src="icons/submitEdit.png">
     </button>
     <button (click)="onDelete(this.todo.id!)">

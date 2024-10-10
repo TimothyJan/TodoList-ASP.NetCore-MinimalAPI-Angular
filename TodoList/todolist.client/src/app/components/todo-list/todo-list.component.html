@@ -5,25 +5,31 @@
     <mat-card-title *ngIf="completedList">Completed</mat-card-title>
   </mat-card-header>
 
-  <mat-card-content>
-    <div *ngIf="todoList?.length; else noToDoListBlock">
-      <ul class="todo-list" *ngFor="let todo of todoList">
-        <li *ngIf="this.todo.isCompleted == completedList">
+  <div *ngIf="dataFetched; else loadingBlock">
+    <mat-card-content>
 
-          <app-todo-list-item [id]="todo.id"></app-todo-list-item>
+      <div *ngIf="todoList.length; else noToDoListBlock">
+        <ul class="todo-list" *ngFor="let todo of todoList">
+          <li *ngIf="todo.isComplete == completedList">
+            <app-todo-list-item [id]="todo.id!"></app-todo-list-item>
+          </li>
+        </ul>
+      </div>
 
-        </li>
-      </ul>
-    </div>
-  </mat-card-content>
+      <ng-template #noToDoListBlock>
+        <div *ngIf="!completedList">
+          Your Todo List is Empty!
+        </div>
+        <div *ngIf="completedList">
+          No Completed Todos!
+        </div>
+      </ng-template>
+
+    </mat-card-content>
+  </div>
+
+  <ng-template #loadingBlock>
+    <app-loading-spinner [isLoading]="!dataFetched"></app-loading-spinner>
+  </ng-template>
 
 </mat-card>
-
-<ng-template #noToDoListBlock>
-  <div *ngIf="!completedList">
-    Your Todo List is Empty!
-  </div>
-  <div *ngIf="completedList">
-    No Completed Todos!
-  </div>
-</ng-template>

@@ -1,11 +1,11 @@
 export class TodoItem {
-  id?: number;
-  isCompleted: boolean;
+  id: number;
+  isComplete: boolean;
   name: string;
   dateAndTime?: string | null;
-  constructor(id: number, isCompleted: boolean, name: string, dateAndTime?: string) {
+  constructor(id: number, isComplete: boolean, name: string, dateAndTime?: string) {
     this.id = id;
-    this.isCompleted = isCompleted;
+    this.isComplete = isComplete;
     this.name = name;
     this.dateAndTime = dateAndTime;
   }
