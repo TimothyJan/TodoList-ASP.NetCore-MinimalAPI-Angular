@@ -32,8 +32,11 @@ export class TodoListService {
   }
 
   /** Update a Todo item's completion status */
-  updateTodoItem(id: number, updatedTodo: Partial<TodoItem>): Observable<void> {
-    return this.http.put<void>(`${APIAddress}/todoitems/${id}`, updatedTodo);
+  // updateTodoItem(id: number, updatedTodo: Partial<TodoItem>): Observable<void> {
+  //   return this.http.put<void>(`${APIAddress}/todoitems/${id}`, updatedTodo);
+  // }
+  updateTodoItem(id: number, updatedTodo: TodoItem): Observable<TodoItem> {
+    return this.http.put<TodoItem>(`${APIAddress}/todoitems/${id}`, updatedTodo);
   }
 
   /** Delete a Todo item */

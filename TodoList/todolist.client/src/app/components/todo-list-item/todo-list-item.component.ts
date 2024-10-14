@@ -13,7 +13,8 @@ export class TodoListItemComponent implements OnInit{
 
   editMode: boolean = false;
   todo: TodoItem | null = null;
-  editingTodo: Partial<TodoItem> | null = null;
+  // editingTodo: Partial<TodoItem> | null = null;
+  editingTodo: TodoItem | null = null;
 
   constructor(
     private _todoListService: TodoListService
@@ -27,7 +28,6 @@ export class TodoListItemComponent implements OnInit{
   loadTodoItem(id:number) {
     this._todoListService.getTodoItem(id).subscribe({
       next: (response) => {
-        console.log('Fetched Todo:', response);
         this.todo = response;
       },
       error: (error) => {
@@ -38,7 +38,9 @@ export class TodoListItemComponent implements OnInit{
 
   /** Complete todoItem */
   onComplete(id: number) {
-    this._todoListService.updateTodoItem(id, { isComplete: true }).subscribe({
+    // this._todoListService.updateTodoItem(id, { isComplete: true }).subscribe({
+    this.todo!.isComplete = true;
+    this._todoListService.updateTodoItem(id, this.todo!).subscribe({
       next: () => {
         if (this.todo) {
           this.todo.isComplete = true;
@@ -52,7 +54,9 @@ export class TodoListItemComponent implements OnInit{
 
   /** Complete todoItem */
   onUncomplete(id: number) {
-    this._todoListService.updateTodoItem(id, { isComplete: false }).subscribe({
+    // this._todoListService.updateTodoItem(id, { isComplete: false }).subscribe({
+    this.todo!.isComplete = false;
+    this._todoListService.updateTodoItem(id, this.todo!).subscribe({
       next: () => {
         if (this.todo) {
           this.todo.isComplete = false;

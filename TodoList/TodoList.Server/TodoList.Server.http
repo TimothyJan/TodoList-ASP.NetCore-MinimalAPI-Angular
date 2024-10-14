@@ -6,7 +6,7 @@ POST {{TodoList.Server_HostAddress}}/todoitems/
 Content-Type: application/json
 
 {
-  "name":"walk dogs2",
+  "name":"walk dogs",
   "isComplete":true
 }
 ###
