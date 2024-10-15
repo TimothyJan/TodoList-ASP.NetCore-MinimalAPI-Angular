@@ -17,16 +17,30 @@ export class TodoListComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    this.todoList = this._todoListService.todoList;
+    this._todoListService.todoList$.subscribe({
+      next: (todoList) => {
+        this.todoList = todoList;
+        this.dataFetched = true;
+      },
+      error: (error) => {
+        console.error('Error fetching Todo list:', error);
+      }
+    });
     this.loadTodoList();
   }
 
   /** Get todoList */
   loadTodoList(): void {
-    this._todoListService.getTodoList().subscribe(todoList => {
-      this.todoList = todoList;
-      this.dataFetched = true;
-    });
+    // this._todoListService.getTodoList().subscribe({
+    //   next: (response) => {
+    //     this.todoList = response;
+    //     this.dataFetched = true;
+    //   },
+    //   error: (error) => {
+    //     console.error('Error fetching Todo:', error);
+    //   }
+    // });
+    this._todoListService.getTodoList().subscribe();
   }
 
 }

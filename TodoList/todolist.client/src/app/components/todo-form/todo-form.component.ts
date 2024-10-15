@@ -39,7 +39,7 @@ export class TodoFormComponent implements OnInit {
 
       this._todoListService.createTodoItem(newTodoItem).subscribe({
         next: (createdTodo) => {
-          console.log('Todo created:', createdTodo);
+          // console.log('Todo created:', createdTodo);
         },
         error: (error) => {
           console.error('Error creating todo:', error);

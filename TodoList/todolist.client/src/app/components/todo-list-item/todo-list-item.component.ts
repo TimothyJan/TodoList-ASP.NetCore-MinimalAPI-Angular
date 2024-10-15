@@ -13,7 +13,6 @@ export class TodoListItemComponent implements OnInit{
 
   editMode: boolean = false;
   todo: TodoItem | null = null;
-  // editingTodo: Partial<TodoItem> | null = null;
   editingTodo: TodoItem | null = null;
 
   constructor(
@@ -38,12 +37,12 @@ export class TodoListItemComponent implements OnInit{
 
   /** Complete todoItem */
   onComplete(id: number) {
-    // this._todoListService.updateTodoItem(id, { isComplete: true }).subscribe({
     this.todo!.isComplete = true;
     this._todoListService.updateTodoItem(id, this.todo!).subscribe({
       next: () => {
         if (this.todo) {
           this.todo.isComplete = true;
+          this._todoListService.getTodoList().subscribe();
         }
       },
       error: (error) => {
@@ -54,12 +53,12 @@ export class TodoListItemComponent implements OnInit{
 
   /** Complete todoItem */
   onUncomplete(id: number) {
-    // this._todoListService.updateTodoItem(id, { isComplete: false }).subscribe({
     this.todo!.isComplete = false;
     this._todoListService.updateTodoItem(id, this.todo!).subscribe({
       next: () => {
         if (this.todo) {
           this.todo.isComplete = false;
+          this._todoListService.getTodoList().subscribe();
         }
       },
       error: (error) => {
@@ -97,7 +96,8 @@ export class TodoListItemComponent implements OnInit{
   onDelete(id: number) {
     this._todoListService.deleteTodoItem(id).subscribe({
       next: () => {
-        console.log("Deleted: " + id);
+        // console.log("Deleted: " + id);
+        this._todoListService.getTodoList().subscribe();
       },
       error: (error) => {
         console.error('Error deleting Todo:', error);

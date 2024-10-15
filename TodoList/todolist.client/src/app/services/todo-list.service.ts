@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TodoItem } from '../models/todoItem';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 const APIAddress = "https://localhost:7160"
 
@@ -10,7 +10,8 @@ const APIAddress = "https://localhost:7160"
 })
 export class TodoListService {
 
-  todoList: TodoItem[] = [];
+  private todoListSubject = new BehaviorSubject<TodoItem[]>([]);
+  todoList$ = this.todoListSubject.asObservable();
 
   constructor(
     private http: HttpClient
@@ -18,7 +19,9 @@ export class TodoListService {
 
   /** Gets all Todo items */
   getTodoList(): Observable<TodoItem[]> {
-    return this.http.get<TodoItem[]>(`${APIAddress}/todoitems`);
+    return this.http.get<TodoItem[]>(`${APIAddress}/todoitems`).pipe(
+      tap(todoList => this.todoListSubject.next(todoList)) // Notify components
+    );
   }
 
   /** Get Todo item by id */
@@ -28,13 +31,14 @@ export class TodoListService {
 
   /** Create a new Todo item */
   createTodoItem(newTodoItem: Partial<TodoItem>): Observable<TodoItem> {
-    return this.http.post<TodoItem>(APIAddress + `/todoitems`, newTodoItem);
+    return this.http.post<TodoItem>(APIAddress + `/todoitems`, newTodoItem).pipe(
+      tap(() => {
+        this.getTodoList().subscribe(); // Fetch the updated todoList after creation
+      })
+    );
   }
 
   /** Update a Todo item's completion status */
-  // updateTodoItem(id: number, updatedTodo: Partial<TodoItem>): Observable<void> {
-  //   return this.http.put<void>(`${APIAddress}/todoitems/${id}`, updatedTodo);
-  // }
   updateTodoItem(id: number, updatedTodo: TodoItem): Observable<TodoItem> {
     return this.http.put<TodoItem>(`${APIAddress}/todoitems/${id}`, updatedTodo);
   }
