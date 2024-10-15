@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { TodoItem } from '../models/todoItem';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { environment } from '../../environments/environment';
 
-const APIAddress = "https://localhost:7160"
+// const APIAddress = "https://localhost:7160";
+const APIAddress = environment.apiAddress;
 
 @Injectable({
   providedIn: 'root'
