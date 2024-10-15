@@ -5,7 +5,8 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 // const APIAddress = "https://localhost:7160";
-const APIAddress = environment.apiAddress;
+const APIAddress = "https://todolistserver20241015124630.azurewebsites.net/";
+// const APIAddress = environment.apiAddress;
 
 @Injectable({
   providedIn: 'root'

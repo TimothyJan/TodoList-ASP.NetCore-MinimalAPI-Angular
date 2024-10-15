@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TodoList.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96f3995697a5094a63a30d659a4eeb8541bb6bb6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6e5241fe59869ff3cf35def3bdd3e403f72b0fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("TodoList.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TodoList.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

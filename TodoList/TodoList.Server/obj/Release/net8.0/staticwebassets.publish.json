@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8q9vhKl230pyvGhOGukxBxfcvBSH8erU+HrHUuqHEJk=",
+  "Hash": "knL1dEheiom3UYyYDmwKIREeJ/yciylnYWDAK08SI+Y=",
   "Source": "TodoList.Server",
   "BasePath": "_content/TodoList.Server",
   "Mode": "Default",
@@ -162,12 +162,12 @@
       "OriginalItemSpec": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\todolist.client\\dist\\todolist.client\\browser\\index.html"
     },
     {
-      "Identity": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\todolist.client\\dist\\todolist.client\\browser\\main-K4RLK3QA.js",
+      "Identity": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\todolist.client\\dist\\todolist.client\\browser\\main-SNTLIJAC.js",
       "SourceId": "todolist.client",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\todolist.client\\dist\\todolist.client\\browser\\",
       "BasePath": "/",
-      "RelativePath": "main-K4RLK3QA.js",
+      "RelativePath": "main-SNTLIJAC.js",
       "AssetKind": "Publish",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -178,7 +178,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\todolist.client\\dist\\todolist.client\\browser\\main-K4RLK3QA.js"
+      "OriginalItemSpec": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\todolist.client\\dist\\todolist.client\\browser\\main-SNTLIJAC.js"
     },
     {
       "Identity": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\todolist.client\\dist\\todolist.client\\browser\\polyfills-FFHMD2TL.js",
@@ -388,6 +388,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\browser\\main-K4RLK3QA.js"
+    },
+    {
+      "Identity": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\browser\\main-SNTLIJAC.js",
+      "SourceId": "TodoList.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\",
+      "BasePath": "_content/TodoList.Server",
+      "RelativePath": "browser/main-SNTLIJAC.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\browser\\main-SNTLIJAC.js"
+    },
+    {
+      "Identity": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\browser\\main-UENH2XPS.js",
+      "SourceId": "TodoList.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\",
+      "BasePath": "_content/TodoList.Server",
+      "RelativePath": "browser/main-UENH2XPS.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\browser\\main-UENH2XPS.js"
     },
     {
       "Identity": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\browser\\polyfills-FFHMD2TL.js",
