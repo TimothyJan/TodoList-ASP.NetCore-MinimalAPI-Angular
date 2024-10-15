@@ -2,5 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>https</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\janti\OneDrive\Documents\GitHub\TodoList-ASP.NetCore-MinimalAPI-Angular\TodoList\TodoList.Server\Properties\PublishProfiles\TodoListServer20241015124630 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

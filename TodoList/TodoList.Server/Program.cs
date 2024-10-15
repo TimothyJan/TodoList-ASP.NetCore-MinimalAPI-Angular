@@ -8,20 +8,36 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 // Add CORS policy
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigin",
+    options.AddPolicy("AllowAll",
         policy =>
         {
-            policy.WithOrigins("https://localhost:4200", "https://127.0.0.1:4200")
+            policy.AllowAnyOrigin() // Allow any origin
                   .AllowAnyHeader()
-                  .AllowAnyMethod()
-                  .AllowCredentials();
+                  .AllowAnyMethod();
         });
 });
 
+// Add Swagger services to generate API documentation
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
+// Serve static files from wwwroot
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 // Use CORS policy
-app.UseCors("AllowSpecificOrigin");
+app.UseCors("AllowAll");
+
+// Enable Swagger in both Development and Production
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Todo API v1");
+    c.RoutePrefix = string.Empty; // Makes Swagger UI the default route
+});
+
 
 RouteGroupBuilder todoItems = app.MapGroup("/todoitems");
 

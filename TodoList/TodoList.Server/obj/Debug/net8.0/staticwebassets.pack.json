@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\3rdpartylicenses.txt",
+      "PackagePath": "staticwebassets\\3rdpartylicenses.txt"
+    },
+    {
+      "Id": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\browser\\favicon.ico",
+      "PackagePath": "staticwebassets\\browser\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\browser\\icons\\check.png",
+      "PackagePath": "staticwebassets\\browser\\icons\\check.png"
+    },
+    {
+      "Id": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\browser\\icons\\delete.png",
+      "PackagePath": "staticwebassets\\browser\\icons\\delete.png"
+    },
+    {
+      "Id": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\browser\\icons\\edit.png",
+      "PackagePath": "staticwebassets\\browser\\icons\\edit.png"
+    },
+    {
+      "Id": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\browser\\icons\\submitEdit.png",
+      "PackagePath": "staticwebassets\\browser\\icons\\submitEdit.png"
+    },
+    {
+      "Id": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\browser\\icons\\uncheck.png",
+      "PackagePath": "staticwebassets\\browser\\icons\\uncheck.png"
+    },
+    {
+      "Id": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\browser\\index.html",
+      "PackagePath": "staticwebassets\\browser\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\browser\\main-K4RLK3QA.js",
+      "PackagePath": "staticwebassets\\browser\\main-K4RLK3QA.js"
+    },
+    {
+      "Id": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\browser\\polyfills-FFHMD2TL.js",
+      "PackagePath": "staticwebassets\\browser\\polyfills-FFHMD2TL.js"
+    },
+    {
+      "Id": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TodoList-ASP.NetCore-MinimalAPI-Angular\\TodoList\\TodoList.Server\\wwwroot\\browser\\styles-5X7WMOQO.css",
+      "PackagePath": "staticwebassets\\browser\\styles-5X7WMOQO.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TodoList.Server.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.TodoList.Server.props",
+      "PackagePath": "build\\TodoList.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.TodoList.Server.props",
+      "PackagePath": "buildMultiTargeting\\TodoList.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.TodoList.Server.props",
+      "PackagePath": "buildTransitive\\TodoList.Server.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

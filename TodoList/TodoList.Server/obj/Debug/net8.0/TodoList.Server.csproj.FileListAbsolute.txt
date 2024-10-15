@@ -40,3 +40,4 @@ C:\Users\janti\OneDrive\Documents\GitHub\TodoList-ASP.NetCore-MinimalAPI-Angular
 C:\Users\janti\OneDrive\Documents\GitHub\TodoList-ASP.NetCore-MinimalAPI-Angular\TodoList\TodoList.Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\janti\OneDrive\Documents\GitHub\TodoList-ASP.NetCore-MinimalAPI-Angular\TodoList\TodoList.Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\janti\OneDrive\Documents\GitHub\TodoList-ASP.NetCore-MinimalAPI-Angular\TodoList\TodoList.Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\janti\OneDrive\Documents\GitHub\TodoList-ASP.NetCore-MinimalAPI-Angular\TodoList\TodoList.Server\bin\Debug\net8.0\TodoList.Server.staticwebassets.runtime.json
