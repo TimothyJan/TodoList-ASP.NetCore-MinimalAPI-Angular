@@ -1,2 +1,2 @@
 # TodoList-ASP.NetCore-MinimalAPI-Angular
-TodoList. ASP.NET Core app with Angular. Minimal API using ASP.NET Core backend with Angular frontend.
+Full-stack Todo List app with an ASP.Net Core Minimal API and a dynamic Angular Material frontend, successfully deployed to Azure.
